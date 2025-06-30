@@ -90,15 +90,16 @@ export const generateQuestion = (countries) => {
       throw new Error('Invalid question type');
   }
 
-  // Filter out any undefined options and ensure we have exactly 4 options
+  // Filter out any undefined options and ensure uniqueness
   options = options.filter(option => option !== undefined && option !== null);
+  options = Array.from(new Set(options));
   if (options.length < 4) {
-    // If we don't have enough options, try generating a different question
+    // If we don't have enough unique options, try generating a different question
     return generateQuestion(countries);
   }
 
-  // Shuffle options
-  options = options.sort(() => 0.5 - Math.random());
+  // Shuffle options and pick only 4
+  options = options.sort(() => 0.5 - Math.random()).slice(0, 4);
 
   return {
     question,

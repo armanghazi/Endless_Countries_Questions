@@ -1,5 +1,5 @@
 .contact-section {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
   width: 100%;
@@ -17,17 +17,17 @@
 }
 
 .contact-container.centered {
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
-  min-height: 70vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 95%;
+  width: 100%;
   max-width: 800px;
 }
 
@@ -198,13 +198,14 @@
 
   .contact-container {
     padding: 1.5rem;
-    min-height: 60vh;
+    min-height: 40vh;
     width: 95%;
   }
 
   .contact-container.centered {
+    min-height: 20vh;
     width: 95%;
-    min-height: 60vh;
+    max-width: none;
   }
 
   .contact-top-row {
@@ -228,7 +229,7 @@
   }
 
   .form-textarea {
-    min-height: 120px;
+    min-height: 90px;
   }
 
   .submit-button,
